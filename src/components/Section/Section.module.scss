@@ -1,0 +1,28 @@
+@use '../../styles/tokens' as *;
+
+.section {
+  width: 100%;
+  margin: 0 auto;
+  padding: $space-lg $space-md;
+}
+.lg { max-width: 1100px; }
+.xl { max-width: 1360px; }
+
+.title {
+  margin: 0 0 $space-sm;
+  font-size: 26px;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin-top: 8px;
+    background: linear-gradient(90deg, $color-primary, transparent);
+  }
+}
+.lead {
+  margin: 0 0 $space-lg;
+  max-width: 60ch;
+  color: $color-muted;
+}

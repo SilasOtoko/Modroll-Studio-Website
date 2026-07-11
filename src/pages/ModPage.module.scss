@@ -1,0 +1,33 @@
+@use '../styles/tokens' as *;
+
+.heroArt {
+  margin: 0 auto;
+  animation: hero-rise 0.8s ease both;
+}
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  justify-content: center;
+  margin-top: $space-md;
+  animation: hero-rise 0.7s ease both 0.45s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .heroArt, .badges { animation: none; }
+}
+.paragraph {
+  margin: 0 0 $space-md;
+  max-width: 70ch;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+}
+.note {
+  margin: $space-md 0 0;
+  color: $color-muted;
+  font-size: 14px;
+
+  a { text-decoration: underline; }
+}

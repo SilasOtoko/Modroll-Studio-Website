@@ -1,0 +1,16 @@
+@use '../styles/tokens' as *;
+
+.wrap {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 96px $space-md;
+  text-align: center;
+}
+.title {
+  margin: 0 0 $space-sm;
+  font-size: 40px;
+}
+.text {
+  margin: 0 0 $space-lg;
+  color: $color-muted;
+}

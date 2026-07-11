@@ -1,0 +1,79 @@
+@use '../styles/tokens' as *;
+
+// hero art's safe text zone is the dark left ~60%; the mark bleeds off the right
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  min-height: clamp(360px, 34vw, 560px);
+
+  h1, p {
+    max-width: 620px;
+  }
+}
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  animation: hero-rise 0.7s ease both 0.45s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .heroActions { animation: none; }
+}
+.modIcon {
+  display: block;
+  filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.45));
+}
+.cardMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+}
+
+.modsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $space-lg;
+}
+.featuredCell { grid-column: 1 / -1; }
+@media (max-width: 720px) {
+  .modsGrid { grid-template-columns: 1fr; }
+}
+
+// Card internals are module-scoped, so target by structure: media div first, body div last
+.featured {
+  display: grid;
+  grid-template-columns: minmax(240px, 340px) 1fr;
+  align-items: stretch;
+}
+.featured > div:first-child {
+  height: 100%;
+  min-height: 250px;
+  border-bottom: none;
+  border-right: 1px solid $color-border;
+}
+.featured > div:last-child {
+  padding: $space-lg;
+}
+.featured h3 {
+  font-size: 28px;
+  margin-bottom: $space-sm;
+}
+.featured p {
+  font-size: 16px;
+}
+.featuredSummary {
+  margin: 0 0 $space-md;
+  color: $color-text;
+  max-width: 65ch;
+}
+@media (max-width: 720px) {
+  .featured { display: block; }
+  .featured > div:first-child {
+    min-height: 180px;
+    border-right: none;
+    border-bottom: 1px solid $color-border;
+  }
+}

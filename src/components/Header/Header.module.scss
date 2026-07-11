@@ -1,0 +1,17 @@
+@use '../../styles/tokens' as *;
+
+.header {
+  text-align: center;
+  padding: $space-xl $space-md;
+  background-color: $color-surface;
+  background-size: cover;
+  background-position: center;
+}
+.title    { margin: 0 0 $space-md; font-size: 40px; }
+.subtitle { margin: 0 0 $space-lg; font-size: 18px; color: $color-muted; }
+.hero {
+  background-image: linear-gradient(135deg, var(--header-from, $color-primary), var(--header-to, $color-secondary));
+  color: var(--header-fg, #fff);
+  border-radius: 0 0 12px 12px;
+}
+.art { margin-bottom: $space-lg; }

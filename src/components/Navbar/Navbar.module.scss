@@ -1,0 +1,67 @@
+@use '../../styles/tokens' as *;
+
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: $space-lg;
+  padding: $space-md $space-lg;
+  border-bottom: 1px solid $color-border;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(25, 16, 9, 0.86);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: nav-drop 0.6s ease both;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 5%, rgba(var(--color-primary-rgb), 0.45), transparent 95%);
+    pointer-events: none;
+  }
+}
+@keyframes nav-drop {
+  from { transform: translateY(-100%); }
+  to   { transform: none; }
+}
+.logo    { font-weight: 700; font-size: 20px; }
+.links   { display: flex; gap: $space-md; margin: 0; padding: 0; list-style: none; }
+
+.links a {
+  position: relative;
+  padding-bottom: 2px;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: $color-primary;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.25s ease;
+  }
+  &:hover::after,
+  &:focus-visible::after { transform: scaleX(1); }
+
+  // NavLink sets aria-current on the active page's link
+  &[aria-current='page'] {
+    color: $color-parchment;
+    font-weight: 700;
+
+    &::after { transform: scaleX(1); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .navbar { animation: none; }
+  .links a::after { transition: none; }
+}
+.actions { margin-left: auto; }

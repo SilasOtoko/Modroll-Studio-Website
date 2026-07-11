@@ -1,0 +1,30 @@
+@use '../../styles/tokens' as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-sm;
+}
+.glyph {
+  flex: none;
+  transition: transform 0.3s ease;
+}
+.logo:hover .glyph,
+a:focus-visible .glyph {
+  transform: rotate(24deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .glyph { transition: none; }
+}
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: $color-parchment;
+  white-space: nowrap;
+}
+.sub {
+  color: $color-muted;
+  font-weight: 600;
+}

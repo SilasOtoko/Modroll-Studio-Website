@@ -1,0 +1,36 @@
+@use '../../styles/tokens' as *;
+
+.button {
+  font-family: $font-base;
+  font-weight: 700;
+  border: 1px solid transparent;
+  border-radius: $radius;
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+
+  &:hover:not(:disabled) {
+    filter: brightness(1.07);
+    transform: translateY(-1px);
+  }
+  &:disabled { opacity: 0.5; cursor: not-allowed; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+  .button:hover:not(:disabled) { transform: none; }
+}
+
+.primary {
+  background: linear-gradient(180deg, $color-primary, var(--color-primary-dark));
+  color: #241708;
+  box-shadow: 0 4px 18px rgba(var(--color-primary-rgb), 0.3);
+
+  &:hover:not(:disabled) { box-shadow: 0 6px 26px rgba(var(--color-primary-rgb), 0.45); }
+}
+.ghost { background: transparent; color: #e8d8b8; border-color: $color-secondary; }
+
+.sm { padding: $space-sm $space-md; font-size: 14px; }
+.md { padding: $space-md $space-lg; font-size: 16px; }
+.lg { padding: $space-md $space-xl; font-size: 18px; }

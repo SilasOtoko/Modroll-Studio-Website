@@ -1,0 +1,21 @@
+@use '../../styles/tokens' as *;
+
+.footer {
+  padding: $space-lg $space-md;
+  border-top: 1px solid $color-border;
+  text-align: center;
+}
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $space-md;
+  margin: 0 0 $space-md;
+  padding: 0;
+  list-style: none;
+}
+.links a {
+  transition: color 0.2s ease;
+  &:hover, &:focus-visible { color: $color-primary; }
+}
+.text { margin: 0; font-size: 14px; color: $color-muted; }

@@ -1,0 +1,21 @@
+// Cloudflare deploy config, read by `wrangler deploy` (run automatically on push by
+// Workers Builds, configured in the Cloudflare dashboard — not in this repo).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // worker name shown in the Cloudflare dashboard
+  "name": "modroll-studio-site",
+  // pins Cloudflare runtime behavior to this date so platform updates can't break us
+  "compatibility_date": "2026-07-10",
+  "observability": {
+    "enabled": true
+  },
+  "assets": {
+    // serve the Vite build output as a static site
+    "directory": "./dist",
+    // unknown URLs (like /mods/critfall) serve index.html so React Router handles them
+    "not_found_handling": "single-page-application"
+  },
+  "compatibility_flags": [
+    "nodejs_compat"
+  ]
+}

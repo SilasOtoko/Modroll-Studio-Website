@@ -1,0 +1,25 @@
+.wrap {
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  font-style: normal;
+}
+.ghost { visibility: hidden; }
+.live {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.caret {
+  display: inline-block;
+  width: 3px;
+  height: 0.9em;
+  margin-left: 3px;
+  vertical-align: baseline;
+  transform: translateY(0.12em);
+  background: var(--color-primary);
+  animation: blink 1s steps(1) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
