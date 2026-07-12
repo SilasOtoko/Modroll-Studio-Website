@@ -7,8 +7,8 @@ const roadmap = [
   },
   {
     title: 'Store launch',
-    status: 'next',
-    note: 'Critfall lands on Modrinth and CurseForge for one-click installs. Highly recommended to use alongside Initiative.',
+    status: 'ongoing',
+    note: 'Critfall is live on CurseForge and awaiting Modrinth approval. However, it is highly recommended to wait for Initiative to be released first as it adds a lot of new features that improve the overall experience of using Critfall.',
   },
   {
     title: 'Initiative',
