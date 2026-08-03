@@ -7,12 +7,12 @@ const roadmap = [
   },
   {
     title: 'Store launch',
-    status: 'ongoing',
-    note: 'Critfall is live on CurseForge and awaiting Modrinth approval. However, it is highly recommended to wait for Initiative to be released first as it adds a lot of new features that improve the overall experience of using Critfall.',
+    status: 'released',
+    note: 'Critfall is live on CurseForge and Modrinth. However, it is highly recommended to wait for Initiative to be released first as it adds a lot of new features that improve the overall experience of using Critfall.',
   },
   {
     title: 'Initiative',
-    status: 'planned',
+    status: 'ongoing',
     note: 'Dice-driven turn order for Minecraft combat. Other features are welcome to be requested.',
   },
   {
